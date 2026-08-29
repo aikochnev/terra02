@@ -8,6 +8,12 @@ resource "yandex_vpc_subnet" "develop" {
   v4_cidr_blocks = var.default_cidr
 }
 
+resource "yandex_vpc_subnet" "develop_db" {
+  name           = "develop-db"
+  zone           = var.vm_db_zone
+  network_id     = yandex_vpc_network.develop.id
+  v4_cidr_blocks = ["10.0.2.0/24"]
+}
 
 data "yandex_compute_image" "ubuntu" {
   family = var.image_family
@@ -47,5 +53,45 @@ resource "yandex_compute_instance" "platform" {
   ignore_changes = [
     boot_disk[0].initialize_params[0].image_id,
   ]
+  }
+}
+
+resource "yandex_compute_instance" "platform_db" {
+  name        = var.vm_db_name
+  zone        = var.vm_db_zone
+  platform_id = var.vm_db_platform_id
+
+  resources {
+    cores         = var.vm_db_cores
+    memory        = var.vm_db_memory
+    core_fraction = var.vm_db_core_fraction
+  }
+
+  boot_disk {
+    initialize_params {
+      image_id = data.yandex_compute_image.ubuntu.id
+      type     = var.vm_db_disk_type
+      size     = var.vm_db_disk_size
+    }
+  }
+
+  scheduling_policy {
+    preemptible = var.vm_db_preemptible
+  }
+
+  network_interface {
+    subnet_id = yandex_vpc_subnet.develop_db.id
+    nat       = var.vm_db_nat
+  }
+
+  metadata = {
+    serial-port-enable = var.vm_web_serial_port_enable
+    ssh-keys = "${var.vm_db_ssh_user}:${var.vms_ssh_root_key}"
+  }
+
+  lifecycle {
+    ignore_changes = [
+      boot_disk[0].initialize_params[0].image_id,
+    ]
   }
 }
