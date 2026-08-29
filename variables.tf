@@ -35,3 +35,75 @@ variable "vms_ssh_root_key" {
   default     = "<your_ssh_ed25519_key>"
   description = "ssh-keygen -t ed25519"
 }
+
+variable "image_family" {
+  type        = string
+  description = "Семейство публичного образа Compute Cloud"
+  default     = "ubuntu-2204-lts"
+}
+
+variable "vm_web_name" {
+  type        = string
+  description = "Имя web-виртуальной машины"
+  default     = "netology-develop-platform-web"
+}
+
+variable "vm_web_platform_id" {
+  type        = string
+  description = "Идентификатор аппаратной платформы web-ВМ"
+  default     = "standard-v3"
+}
+
+variable "vm_web_cores" {
+  type        = number
+  description = "Количество vCPU web-ВМ"
+  default     = 2
+}
+
+variable "vm_web_memory" {
+  type        = number
+  description = "Объём RAM web-ВМ в ГБ"
+  default     = 1
+}
+
+variable "vm_web_core_fraction" {
+  type        = number
+  description = "Гарантированная доля производительности vCPU, %"
+  default     = 20
+}
+
+variable "vm_web_disk_type" {
+  type        = string
+  description = "Тип загрузочного диска web-ВМ"
+  default     = "network-hdd"
+}
+
+variable "vm_web_disk_size" {
+  type        = number
+  description = "Размер загрузочного диска web-ВМ в ГБ"
+  default     = 8
+}
+
+variable "vm_web_preemptible" {
+  type        = bool
+  description = "Использовать прерываемую web-ВМ"
+  default     = true
+}
+
+variable "vm_web_nat" {
+  type        = bool
+  description = "Назначить web-ВМ публичный IPv4-адрес"
+  default     = true
+}
+
+variable "vm_web_ssh_user" {
+  type        = string
+  description = "Пользователь ОС для SSH-подключения"
+  default     = "ubuntu"
+}
+
+variable "vm_web_serial_port_enable" {
+  type        = number
+  description = "Включить serial console для web-ВМ"
+  default     = 1
+}
