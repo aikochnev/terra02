@@ -27,7 +27,7 @@ variable "vm_web_memory" {
 variable "vm_web_core_fraction" {
   type        = number
   description = "Гарантированная доля vCPU web-ВМ, %"
-  default     = 5
+  default     = 20
 }
 
 variable "vm_web_disk_type" {
@@ -39,7 +39,7 @@ variable "vm_web_disk_type" {
 variable "vm_web_disk_size" {
   type        = number
   description = "Размер загрузочного диска web-ВМ в ГБ"
-  default     = 5
+  default     = 8
 }
 
 variable "vm_web_preemptible" {

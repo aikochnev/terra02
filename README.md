@@ -48,7 +48,9 @@
 ---
 ### Задание 3
 
-<img src = "img/t02-07.png" width = 100%>
+<img src = "img/t02-09.png" width = 100%>
 
-<img src = "img/t02-08.png" width = 100%>
+<img src = "img/t02-10.png" width = 100%>
+
+<img src = "img/t02-10.png" width = 100%>
 ---
