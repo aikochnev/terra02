@@ -42,4 +42,10 @@ resource "yandex_compute_instance" "platform" {
     serial-port-enable = var.vm_web_serial_port_enable
     ssh-keys           = "${var.vm_web_ssh_user}:${var.vms_ssh_root_key}"
   }
+
+  lifecycle {
+  ignore_changes = [
+    boot_disk[0].initialize_params[0].image_id,
+  ]
+  }
 }

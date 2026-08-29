@@ -35,7 +35,6 @@ variable "vms_ssh_root_key" {
   default     = "<your_ssh_ed25519_key>"
   description = "ssh-keygen -t ed25519"
 }
-
 variable "image_family" {
   type        = string
   description = "Семейство публичного образа Compute Cloud"
@@ -81,7 +80,7 @@ variable "vm_web_disk_type" {
 variable "vm_web_disk_size" {
   type        = number
   description = "Размер загрузочного диска web-ВМ в ГБ"
-  default     = 8
+  default     = 5
 }
 
 variable "vm_web_preemptible" {
