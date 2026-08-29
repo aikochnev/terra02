@@ -1,4 +1,4 @@
-# Домашнее задание к занятию "`Введение в Terraform`" - `Кочнев Андрей`
+# Домашнее задание к занятию "`Основы Terraform. Yandex Cloud`" - `Кочнев Андрей`
 
 
 ### Инструкция по выполнению домашнего задания
@@ -25,61 +25,30 @@
 
 ### Задание 1
 
-Сохранить личную, секретную информацию можно в файле personal.auto.tfvars
+<img src = "img/t02-01.png" width = 100%>
 
-<img src = "img/t01.png" width = 100%>
+<img src = "img/t02-02.png" width = 100%>
 
-<img src = "img/t02.png" width = 100%>
+<img src = "img/t02-03.png" width = 100%>
 
-<img src = "img/t03.png" width = 100%>
+<img src = "img/t02-04.png" width = 100%>
 
-Значение пароля - 1l6AavOdLIOSitoe
+<img src = "img/t02-05.png" width = 100%>
 
-В коде допущены были как синтаксические ошибки:
+<img src = "img/t02-06.png" width = 100%>
 
-<img src = "img/t04.png" width = 100%>
-
-Так и отсвствует имя ресурса
-
-<img src = "img/t05.png" width = 100%>
-
-Исправленная версия кода:
-
-<img src = "img/t06.png" width = 100%>
-
-<img src = "img/t07.png" width = 100%>
-
-<img src = "img/t08.png" width = 100%>
-
-Имя изменено:
-
-<img src = "img/t09.png" width = 100%>
-
-В результате после применения команды terraform apply -auto-approve контейнер был заменен
-
-<img src = "img/t10.png" width = 100%>
-
-Использование этого ключа опасно тем, что код выполняется без подтверждения выполняемых по плану действий. Это опасно если код не до конца проработан (удаоение ресурсов, простои, потери данных и т.д.). Но также и необходим когда - например для автоматических пайпланов, повторяемых деплоев или тестовых сред.
-
-Ресурсы удалены:
-
-<img src = "img/t11.png" width = 100%>
-
-<img src = "img/t12.png" width = 100%>
-
-Образ не удален потому что в коде есть строчка:
- keep_locally = true
-
-по этому поводу в документации сказано что:
-
-<img src = "img/t13.png" width = 100%>
-
-То есть оставляет образ при значении true
 ---
 
 ### Задание 2
 
-<img src = "img/t14.png" width = 100%>
+<img src = "img/t02-07.png" width = 100%>
 
-<img src = "img/t15.png" width = 100%>
+<img src = "img/t02-08.png" width = 100%>
+
+---
+### Задание 3
+
+<img src = "img/t02-07.png" width = 100%>
+
+<img src = "img/t02-08.png" width = 100%>
 ---
