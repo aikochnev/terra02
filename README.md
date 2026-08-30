@@ -74,3 +74,9 @@
 <img src = "img/t02-16.png" width = 100%>
 
 <img src = "img/t02-17.png" width = 100%>
+
+---
+
+### Задание 6
+
+<img src = "img/t02-18.png" width = 100%>

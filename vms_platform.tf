@@ -12,36 +12,6 @@ variable "vm_web_platform_id" {
   default     = "standard-v3"
 }
 
-variable "vm_web_cores" {
-  type        = number
-  description = "Количество vCPU web-ВМ"
-  default     = 2
-}
-
-variable "vm_web_memory" {
-  type        = number
-  description = "Объём памяти web-ВМ в ГБ"
-  default     = 1
-}
-
-variable "vm_web_core_fraction" {
-  type        = number
-  description = "Гарантированная доля vCPU web-ВМ, %"
-  default     = 20
-}
-
-variable "vm_web_disk_type" {
-  type        = string
-  description = "Тип загрузочного диска web-ВМ"
-  default     = "network-hdd"
-}
-
-variable "vm_web_disk_size" {
-  type        = number
-  description = "Размер загрузочного диска web-ВМ в ГБ"
-  default     = 8
-}
-
 variable "vm_web_preemptible" {
   type        = bool
   description = "Использовать прерываемую web-ВМ"
@@ -53,13 +23,6 @@ variable "vm_web_nat" {
   description = "Назначить web-ВМ публичный IPv4-адрес"
   default     = true
 }
-
-variable "vm_web_ssh_user" {
-  type        = string
-  description = "Пользователь ОС для SSH-подключения к web-ВМ"
-  default     = "ubuntu"
-}
-
 
 # Переменные второй, db-ВМ
 
@@ -81,36 +44,6 @@ variable "vm_db_platform_id" {
   default     = "standard-v3"
 }
 
-variable "vm_db_cores" {
-  type        = number
-  description = "Количество vCPU db-ВМ"
-  default     = 2
-}
-
-variable "vm_db_memory" {
-  type        = number
-  description = "Объём памяти db-ВМ в ГБ"
-  default     = 2
-}
-
-variable "vm_db_core_fraction" {
-  type        = number
-  description = "Гарантированная доля vCPU db-ВМ, %"
-  default     = 20
-}
-
-variable "vm_db_disk_type" {
-  type        = string
-  description = "Тип загрузочного диска db-ВМ"
-  default     = "network-hdd"
-}
-
-variable "vm_db_disk_size" {
-  type        = number
-  description = "Размер загрузочного диска db-ВМ в ГБ"
-  default     = 8
-}
-
 variable "vm_db_preemptible" {
   type        = bool
   description = "Использовать прерываемую db-ВМ"
@@ -123,8 +56,20 @@ variable "vm_db_nat" {
   default     = true
 }
 
-variable "vm_db_ssh_user" {
-  type        = string
-  description = "Пользователь ОС для SSH-подключения к db-ВМ"
-  default     = "ubuntu"
+
+variable "vms_resources" {
+  type = map(object({
+    cores         = number
+    memory        = number
+    core_fraction = number
+    hdd_size      = number
+    hdd_type      = string
+  }))
+
+  description = "Вычислительные ресурсы и параметры загрузочных дисков виртуальных машин"
+}
+
+variable "metadata" {
+  type        = map(string)
+  description = "Общие metadata для всех виртуальных машин"
 }
