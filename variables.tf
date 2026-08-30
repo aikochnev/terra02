@@ -47,3 +47,21 @@ variable "image_family" {
   type    = string
   default = "ubuntu-2204-lts"
 }
+
+variable "project_name" {
+  type        = string
+  description = "Название проекта"
+  default     = "netology"
+}
+
+variable "environment_name" {
+  type        = string
+  description = "Название окружения"
+  default     = "develop"
+}
+
+variable "service_name" {
+  type        = string
+  description = "Название платформы или сервиса"
+  default     = "platform"
+}

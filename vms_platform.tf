@@ -2,8 +2,8 @@
 
 variable "vm_web_name" {
   type        = string
-  description = "Имя web-виртуальной машины"
-  default     = "netology-develop-platform-web"
+  description = "Суффикс имени web-виртуальной машины"
+  default     = "web"
 }
 
 variable "vm_web_platform_id" {
@@ -65,8 +65,8 @@ variable "vm_web_ssh_user" {
 
 variable "vm_db_name" {
   type        = string
-  description = "Имя db-виртуальной машины"
-  default     = "netology-develop-platform-db"
+  description = "Суффикс имени db-виртуальной машины"
+  default     = "db"
 }
 
 variable "vm_db_zone" {
