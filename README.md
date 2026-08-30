@@ -46,11 +46,31 @@
 <img src = "img/t02-08.png" width = 100%>
 
 ---
+
 ### Задание 3
 
 <img src = "img/t02-09.png" width = 100%>
 
 <img src = "img/t02-10.png" width = 100%>
 
-<img src = "img/t02-10.png" width = 100%>
+<img src = "img/t02-11.png" width = 100%>
+
+<img src = "img/t02-12.png" width = 100%>
+
+<img src = "img/t02-13.png" width = 100%>
+
 ---
+
+### Задание 4
+
+<img src = "img/t02-14.png" width = 100%>
+
+<img src = "img/t02-15.png" width = 100%>
+
+---
+
+### Задание 5
+
+<img src = "img/t02-16.png" width = 100%>
+
+<img src = "img/t02-17.png" width = 100%>
